@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.DataProtection;
 using AireAppointments.Api.Data;
 using AireAppointments.Api.DTOs;
 using AireAppointments.Api.Models;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace AireAppointments.Api.Services;
 

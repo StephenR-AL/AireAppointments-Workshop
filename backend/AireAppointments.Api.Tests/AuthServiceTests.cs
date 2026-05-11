@@ -1,9 +1,9 @@
-using FluentAssertions;
-using NUnit.Framework;
 using AireAppointments.Api.Data;
 using AireAppointments.Api.DTOs;
 using AireAppointments.Api.Models;
 using AireAppointments.Api.Services;
+using FluentAssertions;
+using NUnit.Framework;
 
 
 namespace AireAppointments.Api.Tests;

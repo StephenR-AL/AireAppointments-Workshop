@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using AireAppointments.Api.DTOs;
 using FluentAssertions;
 using NUnit.Framework;
-using AireAppointments.Api.DTOs;
 
 namespace AireAppointments.Api.Tests;
 

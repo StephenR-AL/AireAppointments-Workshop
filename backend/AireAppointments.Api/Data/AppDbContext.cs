@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using AireAppointments.Api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AireAppointments.Api.Data;
 
@@ -20,7 +20,7 @@ public class AppDbContext : DbContext
             entity.Property(e => e.ContactNumber).IsRequired().HasMaxLength(20);
             entity.Property(e => e.EmailAddress).IsRequired().HasMaxLength(200);
             entity.Property(e => e.Status).HasConversion<int>();
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("NOW()");
         });
 
         modelBuilder.Entity<Admin>(entity =>

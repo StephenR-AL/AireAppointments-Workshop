@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
 using AireAppointments.Api.DTOs;
 using AireAppointments.Api.Middleware;
 using AireAppointments.Api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AireAppointments.Api.Controllers;
 

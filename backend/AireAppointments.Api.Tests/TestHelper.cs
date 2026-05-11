@@ -1,6 +1,6 @@
+using AireAppointments.Api.Data;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
-using AireAppointments.Api.Data;
 
 namespace AireAppointments.Api.Tests;
 
