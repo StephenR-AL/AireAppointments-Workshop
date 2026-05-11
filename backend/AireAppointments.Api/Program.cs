@@ -1,6 +1,6 @@
-using Microsoft.EntityFrameworkCore;
 using AireAppointments.Api.Data;
 using AireAppointments.Api.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
-using Microsoft.EntityFrameworkCore;
 using AireAppointments.Api.Data;
 using AireAppointments.Api.DTOs;
 using AireAppointments.Api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AireAppointments.Api.Services;
 

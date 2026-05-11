@@ -1,12 +1,12 @@
-using FluentAssertions;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using NUnit.Framework;
 using AireAppointments.Api.Controllers;
 using AireAppointments.Api.Data;
 using AireAppointments.Api.DTOs;
 using AireAppointments.Api.Models;
 using AireAppointments.Api.Services;
+using FluentAssertions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using NUnit.Framework;
 
 
 namespace AireAppointments.Api.Tests;

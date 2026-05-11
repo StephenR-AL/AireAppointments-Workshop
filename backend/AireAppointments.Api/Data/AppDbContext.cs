@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using AireAppointments.Api.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AireAppointments.Api.Data;
 
