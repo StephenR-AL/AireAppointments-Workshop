@@ -9,7 +9,7 @@ AireAppointments is a fictional healthcare technology company operating in West 
 - A **patient-facing form** for booking appointments
 - An **admin area** behind a login screen for managing appointments
 - A **React** frontend with **Tailwind CSS**
-- An **ASP.NET Core** Web API backend with **Entity Framework Core** and **MySQL**
+- An **ASP.NET Core** Web API backend with **Entity Framework Core** and **PostgreSQL**
 - **Docker Compose** for running the full stack
 - **Unit tests** for both frontend and backend
 
@@ -45,7 +45,7 @@ npm install
 npm run dev
 ```
 
-You'll need a MySQL instance running locally — see `appsettings.json` for the connection string.
+The database runs via Docker Compose. Start just the database with `docker compose up db -d`, then connect your API to it locally. You can browse the database using a tool like [DBeaver](https://dbeaver.io) or [pgAdmin](https://www.pgadmin.org) — connect to `localhost:5432` with username/password `aireappointments`.
 
 ### Running Tests
 

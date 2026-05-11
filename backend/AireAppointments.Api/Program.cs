@@ -7,10 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDataProtection();
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
-    ));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<AireAppointments.Api.Services.AuthService>();
 builder.Services.AddScoped<AireAppointments.Api.Services.IAppointmentService, AireAppointments.Api.Services.AppointmentService>();
 builder.Services.AddEndpointsApiExplorer();
