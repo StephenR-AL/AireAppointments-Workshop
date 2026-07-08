@@ -6,8 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDataProtection();
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddSingleton<UtcDateTimeInterceptor>();
+builder.Services.AddDbContext<AppDbContext>((sp, options) =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.AddInterceptors(sp.GetRequiredService<UtcDateTimeInterceptor>());
+});
 builder.Services.AddScoped<AireAppointments.Api.Services.AuthService>();
 builder.Services.AddScoped<AireAppointments.Api.Services.IAppointmentService, AireAppointments.Api.Services.AppointmentService>();
 builder.Services.AddEndpointsApiExplorer();

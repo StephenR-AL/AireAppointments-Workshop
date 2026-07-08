@@ -24,7 +24,7 @@ public class AppointmentService(AppDbContext db) : IAppointmentService
         var appointment = new Appointment
         {
             Name = dto.Name,
-            AppointmentDateTime = dto.AppointmentDateTime,
+            AppointmentDateTime = DateTime.SpecifyKind(dto.AppointmentDateTime, DateTimeKind.Utc),
             Description = dto.Description,
             ContactNumber = dto.ContactNumber,
             EmailAddress = dto.EmailAddress
@@ -43,7 +43,7 @@ public class AppointmentService(AppDbContext db) : IAppointmentService
             return null;
 
         appointment.Name = dto.Name;
-        appointment.AppointmentDateTime = dto.AppointmentDateTime;
+        appointment.AppointmentDateTime = DateTime.SpecifyKind(dto.AppointmentDateTime, DateTimeKind.Utc);
         appointment.Description = dto.Description;
         appointment.ContactNumber = dto.ContactNumber;
         appointment.EmailAddress = dto.EmailAddress;
