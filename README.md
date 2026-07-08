@@ -47,6 +47,37 @@ npm run dev
 
 The database runs via Docker Compose. Start just the database with `docker compose up db -d`, then connect your API to it locally. You can browse the database using a tool like [DBeaver](https://dbeaver.io) or [pgAdmin](https://www.pgadmin.org) — connect to `localhost:5432` with username/password `aireappointments`.
 
+### Debugging from your IDE (hybrid setup)
+
+Run the database in Docker but launch the backend and frontend from your IDE so you can use the debugger, breakpoints, and hot reload.
+
+**1. Start the database:**
+
+```bash
+docker compose up db -d
+```
+
+**2. Backend in Visual Studio:**
+
+- Open `backend/AireAppointments.Api.sln`
+- The `AireAppointments.Api` launch profile is configured (`backend/AireAppointments.Api/Properties/launchSettings.json`) to listen on `http://localhost:5000`, which is what the frontend expects.
+- Select the `AireAppointments.Api` profile and press F5 (or Ctrl+F5 to run without the debugger)
+- The `appsettings.json` connection string points to `localhost:5432`, so the API will connect to the Docker database
+- Swagger is available at `http://localhost:5000/swagger`
+
+**3. Frontend in VS Code:**
+
+- Open the `frontend/` folder
+- Run `npm install` (first time only)
+- Run `npm run dev` — the Vite dev server starts on `http://localhost:3000` with hot reload
+- Don't use `npm run start` for local development — that serves the production build from `build/client` and requires `npm run build` to be run first
+
+**4. Verify:**
+
+- Patient booking form: `http://localhost:3000`
+- Admin login: `admin@aireappointments.co.uk` / `admin123`
+- API docs: `http://localhost:5000/swagger`
+
 ### Running Tests
 
 **Backend:**
